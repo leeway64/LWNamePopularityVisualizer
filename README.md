@@ -14,4 +14,4 @@ I should note that the default name popularity file is names.txt with a start ye
 
 The name popularity information is based on [data from the Social Security Information](https://www.ssa.gov/OACT/babynames/).
 
-The specifications for this project was provided on the [UW Seattle CSE 142 summer 2017 website](https://courses.cs.washington.edu/courses/cse142/17su/homework.shtml).
+The specifications for this project was provided on the [UW Seattle CSE 142 summer 2017 website](https://courses.cs.washington.edu/courses/cse142/17su/homework.shtml). The original assignment was meant to be written in Java, but I completed the assignment using Python.
