@@ -1,10 +1,13 @@
-# Lee-Way Wang
-# 9/18/20
 # This programs prompts the user for a name and gender. If information on the name (with the respective gender)
 # exists, then the program will print the popularity and name meaning data. It will also draw a plot
 # representing the name's popularity.
 
 from matplotlib import pyplot as plt
+
+
+START_YEAR = 1890
+# START_YEAR = 1863
+BAR_WIDTH = 3
 
 
 # Prints an introductory message.
@@ -78,22 +81,24 @@ def draw_bar_chart(name_popularity, name_meaning):
     plt.show()
 
 
-START_YEAR = 1890
-# START_YEAR = 1863
-BAR_WIDTH = 3
-name_file = 'names.txt'  # Start date for first name file is 1890
-# name_file = "names2.txt"  # Start date for second name file is 1863
-meanings_file = "meanings.txt"
+def main():
+    name_file = 'names.txt'  # Start date for first name file is 1890
+    # name_file = "names2.txt"  # Start date for second name file is 1863
+    meanings_file = "meanings.txt"
 
 
-introduction()
-name = input("Name: ")
-gender = input("Gender (M or F): ")
+    introduction()
+    name = input("Name: ")
+    gender = input("Gender (M or F): ")
 
-name_popularity = search_file(name, gender, name_file)
-print(name_popularity)
+    name_popularity = search_file(name, gender, name_file)
+    print(name_popularity)
 
-if name_popularity != "\"" + name + "\" not found":
-    name_meaning = search_file(name, gender, meanings_file)
-    print(name_meaning)
-    draw_bar_chart(name_popularity, name_meaning)
+    if name_popularity != "\"" + name + "\" not found":
+        name_meaning = search_file(name, gender, meanings_file)
+        print(name_meaning)
+        draw_bar_chart(name_popularity, name_meaning)
+
+
+if __name__ == '__main__':
+    main()
