@@ -54,13 +54,13 @@ def draw_bar_chart(name_popularity, name_meaning):
     # Basically, a popularity of 1 should map to a height of 1000, while a popularity of 1000 should map to
     # a height of 1.
     y_data = []
-    for i in range(0, len(popularity_data)):
+    for i in range(len(popularity_data)):
         if popularity_data[i] != 0:
             y_data.append((-1*popularity_data[i])+1001)
         else:
             y_data.append(0)
 
-    year_data = [x*10 for x in range(0, len(popularity_data))]
+    year_data = [x*10 for x in range(len(popularity_data))]
     year_data = [y+START_YEAR for y in year_data]
 
     plt.style.use('fivethirtyeight')
@@ -74,7 +74,7 @@ def draw_bar_chart(name_popularity, name_meaning):
     plt.ylabel('Popularity of name (nth most popular)')
     plt.yticks(ticks=[])
 
-    for i in range(0, len(year_data)):
+    for i in range(len(year_data)):
         plt.text(year_data[i], y_data[i], str(popularity_data[i]))
 
     plt.grid(True)

@@ -21,7 +21,16 @@ The default name popularity file is names.txt with a start year of 1890. If the 
 file is set to names2.txt, then the start year will be 1863.
 
 
+## Usage
 
+For Linux machines:
+
+```
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip3 install -r requirements.txt
+$ python3 include/LWNamePopularityVisualizer
+```
 
 
 ## Third-Party Tools
