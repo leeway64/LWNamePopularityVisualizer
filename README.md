@@ -66,7 +66,7 @@ MYRA f English Created by the 17th-century poet Fulke Greville.
 
 ## References
 
-The name popularity information in [`names.txt`](include/names.txt) and [`names2.txt`](names2.txt)
+The name popularity information in [`names.txt`](include/names.txt) and [`names2.txt`](include/names2.txt)
 is based on [data from the Social Security Information](https://www.ssa.gov/OACT/babynames/).
 
 The specifications for this project, along with `names.txt` and `names2.txt`, was provided on the
