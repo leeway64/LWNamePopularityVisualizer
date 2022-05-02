@@ -4,14 +4,14 @@
 
 from matplotlib import pyplot as plt
 import os
+import sys
 
-START_YEAR = 1890
-# START_YEAR = 1863
+
 BAR_WIDTH = 3
 
 
 # Prints an introductory message.
-def introduction():
+def introduction(START_YEAR):
     print("This program allows you to search through the")
     print("data from the Social Security Administration")
     print("to see how popular a particular name has been")
@@ -44,7 +44,7 @@ def search_file(name, gender, text_file):
 # name_popularity (list): a list of numbers representing the popularity of each name for every decade
 # name_meaning (string): the meaning of the name
 # No returns
-def draw_bar_chart(name_popularity, name_meaning):
+def draw_bar_chart(name_popularity, name_meaning, START_YEAR):
     popularity_data = name_popularity.split()
     popularity_data = popularity_data[2:]
     popularity_data = [int(z) for z in popularity_data]
@@ -81,13 +81,20 @@ def draw_bar_chart(name_popularity, name_meaning):
     plt.show()
 
 
-def main():
-    name_file = f'{os.path.dirname(__file__)}/names.txt'  # Start date for first name file is 1890
-    #name_file = f"{os.path.dirname(__file__)}/names2.txt"  # Start date for second name file is 1863
+def main():    
+    if len(sys.argv) != 2:
+        raise RuntimeError("Incorrect number of arguments! Provide the name of the file that contains the names.")
+    
+    
+    name_file = f'{os.path.dirname(__file__)}/{sys.argv[1]}'
+    START_YEAR = 1890
+    if sys.argv[1] == "names2.txt":
+        START_YEAR = 1863
+        
     meanings_file = f"{os.path.dirname(__file__)}/meanings.txt"
 
 
-    introduction()
+    introduction(START_YEAR)
     name = input("Name: ")
     gender = input("Gender (M or F): ")
 
@@ -97,8 +104,9 @@ def main():
     if name_popularity != "\"" + name + "\" not found":
         name_meaning = search_file(name, gender, meanings_file)
         print(name_meaning)
-        draw_bar_chart(name_popularity, name_meaning)
+        draw_bar_chart(name_popularity, name_meaning, START_YEAR)
 
 
 if __name__ == '__main__':
     main()
+
