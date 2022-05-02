@@ -3,7 +3,7 @@
 # representing the name's popularity.
 
 from matplotlib import pyplot as plt
-
+import os
 
 START_YEAR = 1890
 # START_YEAR = 1863
@@ -82,9 +82,9 @@ def draw_bar_chart(name_popularity, name_meaning):
 
 
 def main():
-    name_file = 'names.txt'  # Start date for first name file is 1890
-    # name_file = "names2.txt"  # Start date for second name file is 1863
-    meanings_file = "meanings.txt"
+    name_file = f'{os.path.dirname(__file__)}/names.txt'  # Start date for first name file is 1890
+    #name_file = f"{os.path.dirname(__file__)}/names2.txt"  # Start date for second name file is 1863
+    meanings_file = f"{os.path.dirname(__file__)}/meanings.txt"
 
 
     introduction()
