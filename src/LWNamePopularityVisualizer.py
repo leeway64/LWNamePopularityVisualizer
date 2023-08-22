@@ -86,7 +86,7 @@ def main():
         raise RuntimeError("Incorrect number of arguments! Provide the name of the file that contains the names.")
     
     
-    name_file = f'{os.path.dirname(__file__)}/{sys.argv[1]}'
+    name_file = f'{sys.argv[1]}'
     START_YEAR = 1890
     if sys.argv[1] == "names2.txt":
         START_YEAR = 1863
