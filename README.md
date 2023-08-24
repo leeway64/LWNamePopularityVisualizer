@@ -3,9 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/leeway64/LWNamePopularityVisualizer)
 
-
-LWNamePopularityVisualizer visualizes the popularity of a name for each decade; it also displays
-the meaning of that name.
+LWNamePopularityVisualizer visualizes the popularity of a certain name for each decade.
 
 
 ## Usage
@@ -14,7 +12,7 @@ the meaning of that name.
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 $ pip3 install -r requirements.txt
-$ python3 include/LWNamePopularityVisualizer.py include/names.txt
+$ python3 src/LWNamePopularityVisualizer.py include/names.txt
 
 
 This program allows you to search through the
@@ -33,17 +31,18 @@ Which will generate the following plot:
 ![Jon name popularity plot](doc/jon_popularity_1890.png)
 
 The y-axis values represents how popular a given name was for each decade. For example, a
-popularity of 1 (highest) would mean that that name was the 1st most popular name for that decade.
-A popularity of 1000 (lowest) would mean that that name was the 1000th most popular name for that
+popularity of 1 (most popular) would mean that that name was the 1st most popular name for that decade.
+A popularity of 1000 (least popular) would mean that that name was the 1000th most popular name for that
 decade.
 
-The default name popularity file is names.txt with a start year of 1890. If the name popularity
-file is set to names2.txt, then the start year will be 1863.
+The default name popularity file is [`names.txt`](include/names.txt) with a start year of 1890. If
+the name popularity file is set to [`names2.txt`](include/names2.txt), then the start year will be
+1863.
 
 If names2.txt had been provided, then:
 
 ```
-$ python3 include/LWNamePopularityVisualizer.py include/names2.txt
+$ python3 src/LWNamePopularityVisualizer.py include/names2.txt
 
 
 This program allows you to search through the
@@ -76,13 +75,13 @@ pytest
 ## References and Acknowledgements
 
 The name popularity information in [`names.txt`](include/names.txt) and [`names2.txt`](include/names2.txt)
-is based on [data from the Social Security Information](https://www.ssa.gov/OACT/babynames/).
+is based on [data from the Social Security Administration](https://www.ssa.gov/OACT/babynames/).
 
 The specifications for this project, along with `names.txt` and `names2.txt`, was provided on the
 [UW Seattle CSE 142 summer 2017 website](https://courses.cs.washington.edu/courses/cse142/17su/homework.shtml).
 The original assignment was meant to be written in Java, but I completed it using Python.
 
-This project also includes a [Python class](include/HashSet.py) that provides a basic implementation
+This project also includes a [Python class](src/HashSet.py) that provides a basic implementation
 for a HashSet.
 
 I would like to give credit to UW Seattle's autumn 2017 CSE 143 course for providing the basis for

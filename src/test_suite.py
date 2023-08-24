@@ -1,4 +1,4 @@
-from Basic_HashSet_Implementation.HashSet import HashSet
+from HashSet import HashSet
 
 
 class TestSuite:

@@ -6,6 +6,8 @@ from matplotlib import pyplot as plt
 import os
 import sys
 
+from HashSet import HashSet
+
 
 BAR_WIDTH = 3
 
@@ -91,10 +93,13 @@ def main():
     if sys.argv[1] == "names2.txt":
         START_YEAR = 1863
         
-    meanings_file = f"{os.path.dirname(__file__)}/meanings.txt"
+    meanings_file = f"include/meanings.txt"
 
-
-    introduction(START_YEAR)
+    hash_set = HashSet(1945)
+    hash_set.add(1945)
+    if hash_set.contains(1945):
+        introduction(START_YEAR)
+    
     name = input("Name: ")
     gender = input("Gender (M or F): ")
 
