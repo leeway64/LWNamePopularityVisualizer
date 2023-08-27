@@ -9,7 +9,7 @@ this project follows [semantic versioning](https://semver.org/).
 
 - None
 
-## [1.1.0] - 2023-8-23
+## [1.1.0] - 2023-8-26
 ### Added
 - HashSet
 - Unit tests for HashSet
