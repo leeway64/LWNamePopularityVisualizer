@@ -9,9 +9,10 @@ this project follows [semantic versioning](https://semver.org/).
 
 - None
 
-## [1.0.1] - 2023-8-23
+## [1.1.0] - 2023-8-23
 ### Added
 - HashSet
+- Unit tests for HashSet
 
 ### Changed
 - LWNamePopularityVisualizer now searches for the names file from the current working directory

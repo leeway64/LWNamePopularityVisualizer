@@ -90,7 +90,7 @@ def main():
     
     name_file = f'{sys.argv[1]}'
     START_YEAR = 1890
-    if sys.argv[1] == "names2.txt":
+    if "names2.txt" in sys.argv[1]:
         START_YEAR = 1863
         
     meanings_file = f"include/meanings.txt"
